@@ -1,0 +1,142 @@
+\documentclass[11pt]{article}
+\newcommand{\command}[1]{``\lstinline{#1}''}
+\newcommand{\program}[1]{\lstinline{#1}}
+%\newcommand{\url}[1]{\lstinline{#1}}
+\newcommand{\channel}[1]{\lstinline{#1}}
+\newcommand{\option}[1]{``{#1}''}
+\newcommand{\step}[1]{``{#1}''}
+
+\newcommand{\assignmentduedate}{18 October}
+\newcommand{\assignmentassignedate}{ 11 October}
+\newcommand{\assignmentnumber}{Five}
+
+\newcommand{\labyear}{2018}
+\newcommand{\labtime}{2:30 pm}
+
+\newcommand{\assigneddate}{Assigned:  \assignmentassignedate, \labyear{} at \labtime{}}
+\newcommand{\duedate}{Due:  \assignmentduedate, \labyear{} at \labtime{}}
+
+\usepackage{pifont}
+\newcommand{\checkmark}{\ding{51}}
+\newcommand{\naughtmark}{\ding{55}}
+
+% Enable margin notes to catch student attention
+
+\usepackage{marginnote}
+\reversemarginpar
+\renewcommand*{\raggedrightmarginnote}{\centering}
+
+\newcommand{\caution}[1]{\null\hfill\LARGE{\faWarning{}}\newline\scriptsize{\em{#1}}}
+\newcommand{\discuss}[1]{\null\hfill\LARGE{\faCommentO{}}\newline\scriptsize{\em{#1}}}
+\newcommand{\resource}[1]{\null\hfill\LARGE{\faLink{}}\newline\scriptsize{\em{#1}}}
+\newcommand{\think}[1]{\null\hfill\LARGE{\faCogs{}}\newline\scriptsize{\em{#1}}}
+
+
+\usepackage{listings}
+\lstset{
+  basicstyle=\small\ttfamily,
+  columns=flexible,
+  breaklines=true
+}
+
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,      
+    urlcolor=magenta,
+}
+
+\usepackage{fancyhdr}
+
+\usepackage[margin=1in]{geometry}
+\usepackage{fancyhdr}
+
+\pagestyle{fancy}
+
+\usepackage{marginnote}
+\reversemarginpar
+\renewcommand*{\raggedrightmarginnote}{\centering}
+
+\fancyhf{}
+\rhead{Computer Science 480}
+\lhead{ Assignment \assignmentnumber{} }
+\rfoot{Page \thepage}
+\lfoot{\duedate}
+
+\usepackage{titlesec}
+\titlespacing\section{0pt}{6pt plus 4pt minus 2pt}{4pt plus 2pt minus 2pt}
+
+\newcommand{\labtitle}[1]
+{
+  \begin{center}
+    \begin{center}
+      \bf
+      CMPSC 480 \\ Software Innovation I\\
+      Fall 2018\\
+      \medskip
+    \end{center}
+    \bf
+    #1
+  \end{center}
+}
+
+\begin{document}
+
+\thispagestyle{empty}
+
+\labtitle{Assignment \assignmentnumber{} }
+\begin{center} \textbf{ \assigneddate{} \\ \duedate{} } \end{center} 
+\noindent \textbf{ }
+
+%\vspace{-0.05in}
+\section*{Objectives}
+
+To learn about various version control software and to compare and contrast their functionality. To develop further expertise in Git and to explore using Git Flow model for software development. To work in a team to develop points for discussion and a demonstration to highlight certain aspects of the  version control systems.
+
+%\vspace{-0.05in}
+\section*{Reading Assignment}
+%\vspace{-0.05in}
+
+To do well on this assignment, you
+should first read about the different version control software and the Git in particular, \href{https://guides.github.com/introduction/git-handbook/}{Git Handbook}.
+Then, you need to learn how to properly utilize the GitHub Flow  \href{
+https://guides.github.com/introduction/flow/}{Understanding the GitHub Flow}.
+
+%\vspace{-0.05in}
+\section*{Team Work}
+%\vspace{-0.05in}
+For this assignment you will work in a team of your choosing (up to 4 members) to prepare for a discussion on the version control systems and GitHub flow. Each team should prepare their responses to the following points. 
+
+\begin{enumerate}
+	\item Overview of the SVN, Git, Mercurial systems.
+	\item Similarities and differences between these version control systems.
+	\item Similarities and differences between various code management platforms (Bitbucket, GitHub, GitLab, etc.).
+	\item Overview of the GitHub Flow.
+	\item A demonstration of a working example of the GitHub Flow process using either your own project or another existing project on GitHub.
+\end{enumerate} 
+
+%\vspace{-0.05in}
+\section*{Locate Existing Projects}
+%\vspace{-0.05in}
+The second portion of the assignment is to be conducted on individual basis. As we prepare to dive into a course project, you are invited to explore the following.
+\begin{enumerate}
+	\item Identify areas of your interest, which can include specific topics in the field of computing or particular tools, programming languages and technologies. Locate an existing project repository on GitHub that is of interest to you, which is not a project you have been a part of.
+	\item Clone the repository for the project you have selected, follow instructions in the project's repository to run the software and  produce an expected output.
+	\item If you find a defect in your selected open-source project, raise an issue by properly documenting the error. If you identify a feasible and relevant feature that is not implemented, similarly, appropriately submit an issue.
+	\item If no defects or features are identified, submit one comment on your selected project as a comment to an appropriate commit in the repository. 
+	\item Submit a link to the issue you have raised or the commit you submitted in the course's \#assignment Slack channel.
+\end{enumerate} 
+
+%\vspace{-0.05in}
+\section*{Deliverables and Evaluation}
+%\vspace{-0.05in}
+
+You are invited to submit the following materials:
+\begin{enumerate}
+	\item A link to the informative issue you raised or the comment you posted on your selected GitHub project send via the course's \#assignments Slack channel. 
+\end{enumerate}
+
+Your grade for this assignment will be based on your submission of the items outlined above and your participation in the team work portion of the assignment during the next class session. Students who have an unexcused absence or fail to contribute to the team work and discussion will receive a grade reduction.
+
+\end{document}
