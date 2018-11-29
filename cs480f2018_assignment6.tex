@@ -1,0 +1,235 @@
+\documentclass[11pt]{article}
+\newcommand{\command}[1]{``\lstinline{#1}''}
+\newcommand{\program}[1]{\lstinline{#1}}
+%\newcommand{\url}[1]{\lstinline{#1}}
+\newcommand{\channel}[1]{\lstinline{#1}}
+\newcommand{\option}[1]{``{#1}''}
+\newcommand{\step}[1]{``{#1}''}
+
+\long\def\omitit #1{}
+
+\newcommand{\assignmentduedate}{15 October}
+\newcommand{\assignmentassignedate}{ 8 October}
+\newcommand{\assignmentnumber}{Six}
+
+\newcommand{\labyear}{2018}
+\newcommand{\labtime}{2:30 pm}
+
+\newcommand{\assigneddate}{Assigned:  \assignmentassignedate, \labyear{} at \labtime{}}
+\newcommand{\duedate}{Due:  \assignmentduedate, \labyear{} at \labtime{}}
+
+\usepackage{pifont}
+\newcommand{\checkmark}{\ding{51}}
+\newcommand{\naughtmark}{\ding{55}}
+
+% Enable margin notes to catch student attention
+
+\usepackage{marginnote}
+\reversemarginpar
+\renewcommand*{\raggedrightmarginnote}{\centering}
+
+\newcommand{\caution}[1]{\null\hfill\LARGE{\faWarning{}}\newline\scriptsize{\em{#1}}}
+\newcommand{\discuss}[1]{\null\hfill\LARGE{\faCommentO{}}\newline\scriptsize{\em{#1}}}
+\newcommand{\resource}[1]{\null\hfill\LARGE{\faLink{}}\newline\scriptsize{\em{#1}}}
+\newcommand{\think}[1]{\null\hfill\LARGE{\faCogs{}}\newline\scriptsize{\em{#1}}}
+
+
+\usepackage{listings}
+\lstset{
+  basicstyle=\small\ttfamily,
+  columns=flexible,
+  breaklines=true
+}
+
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,      
+    urlcolor=magenta,
+}
+
+\usepackage{fancyhdr}
+
+\usepackage[margin=1in]{geometry}
+\usepackage{fancyhdr}
+
+\pagestyle{fancy}
+
+\usepackage{marginnote}
+\reversemarginpar
+\renewcommand*{\raggedrightmarginnote}{\centering}
+
+\fancyhf{}
+\rhead{Computer Science 480}
+\lhead{ Assignment \assignmentnumber{} }
+\rfoot{Page \thepage}
+\lfoot{\duedate}
+
+\usepackage{titlesec}
+\titlespacing\section{0pt}{6pt plus 4pt minus 2pt}{4pt plus 2pt minus 2pt}
+
+\newcommand{\labtitle}[1]
+{
+  \begin{center}
+    \begin{center}
+      \bf
+      CMPSC 480 \\ Software Innovation I\\
+      Fall 2018\\
+      \medskip
+    \end{center}
+    \bf
+    #1
+  \end{center}
+}
+
+\begin{document}
+
+\thispagestyle{empty}
+
+\labtitle{Assignment \assignmentnumber{} }
+\begin{center} \textbf{ \assigneddate{} \\ \duedate{} } \end{center} 
+\noindent \textbf{ }
+
+%\vspace{-0.05in}
+\section*{Objectives}
+
+% peer editing - editor on github
+% set up travis (just test writing) proselint
+% more social media connections/analytics
+
+To participate in a peer editing of a software project by following the best practices of the code review. To learn how to prepare code for review and how to be an effective reviewer. To engage in a collaborative process of code review and to ensure the reviewed code is modified according to the found errors. 
+
+%\vspace{-0.05in}
+\section*{Reading Assignment}
+%\vspace{-0.05in}
+
+To do well on this assignment, you
+should first read the \href{https://smartbear.com/learn/code-review/best-practices-for-peer-code-review/}{The Best Practices for Peer Code Review}.
+Then, you need to become familiar with \href{https://mtlynch.io/human-code-reviews-1/}{How to Do Code Reviews Like a Human}. Finally, to ensure a respectful environment please read \href{
+https://blog.codinghorror.com/the-ten-commandments-of-egoless-programming/}{The Ten Commandments of Egoless Programming}.
+
+%\vspace{-0.05in}
+\section*{Peer Editing Code}
+%\vspace{-0.05in}
+There are many  benefits of code review, including finding defects in development and knowledge sharing that is likely to be facilitated by the process. The reviewed code will also be well-documented.
+
+Each software innovator needs to have a portion of their software project's code reviewed and be a reviewer for at least one author. Once the author-reviewer pairing has been established please visit the \href{https://docs.google.com/spreadsheets/d/1p5N6JGmYllYSUAc4E1CcibHz30lQqyM_ZC1RfTphdEI/edit?usp=sharing}{CMPSC 480 Software Innovators Google Spreadsheet} with your project information. First, ensure the link to your software project is established, then add your name in the ``Software Project Editor 1'' column for the selected author. 
+
+
+\subsection*{Author preparation}
+In your software project implementation select 100-150 lines of code for review. Prepare for the review process by looking over your code and making sure you are able to explain it and to justify it. In this informal code review process, you, the author, will drive the review by sitting at the computer with a control of the keyboard and the mouse, opening various files, pointing out the code segments for review and
+explaining why it was done this way. 
+
+\subsection*{Reviewer Process}
+
+During the process of the review, if you, as the reviewer, see something
+amiss, you can engage in a little ``spot pair-programming''  as you identify errors and work with the author to write the fixes. Using Markdown, create an issue in the author's repository, which will contain review metrics and the checklist. 
+
+\noindent Specifically, as you perform the code review, please keep track of the following, and include these metrics in your issue:
+\begin{itemize}
+	\item \emph{Inspection rate}: the speed with which a review is performed.
+	\item \emph{Defect rate}: the number of bugs found per hour of review. If you spent less than an hour on the review adjust the number to per hour rate.
+	\item \emph{Defect density}: the average number of bugs found per line of code.
+\end{itemize}
+
+% https://sking7.github.io/articles/810360223.html
+
+\noindent Then, in your issue include the checklist with the following:
+\begin{enumerate}
+
+	\item Code Formatting: following a specific style guide.
+	\item Coding Best Practices: no hard coding, comments, no redundancy, is the code as modular as possible, etc.
+	\item Code Readability: self-explanatory code, use appropriate names for variables, functions, classes.
+	\item Code Correctness: does the code work? does it perform its intended function?
+	\item Code Testability: the ease of testing - refactoring into a separate function if needed.
+\end{enumerate}
+
+
+\omitit{
+1. Documentation: All subroutines are commented in clear language.
+2. Documentation: Describe what happens with corner-case
+input.
+3. Documentation: Complex algorithms are explained and justified.
+4. Documentation: Code that depends on non-obvious behavior
+in external libraries is documented with reference to external
+documentation.
+5. Documentation: Units of measurement are documented for
+numeric values.
+6. Documentation: Incomplete code is indicated with appropriate
+distinctive markers (e.g. “TODO” or “FIXME”).
+7. Documentation: User-facing documentation is updated (online
+help, contextual help, tool-tips, version history).
+8. Testing: Unit tests are added for new code paths or behaviors.
+9. Testing: Unit tests cover errors and invalid parameter cases.
+10. Testing: Unit tests demonstrate the algorithm is performing as
+documented.
+11. Testing: Possible null pointers always checked before use.
+12. Testing: Array indexes checked to avoid out-of-bound errors.
+13. Testing: Don’t write new code that is already implemented in
+an existing, tested API.
+14. Testing: New code fixes/implements the issue in question
+15. Error Handling: Invalid parameter values are handled properly
+early in the subroutine.
+16. Error Handling: Error values of null pointers from subroutine
+invocations are checked.
+17. Error Handling: Error handlers clean up state and resources
+no matter where an error occurs.
+18. Error Handling: Memory is released, resources are closed, and
+reference counters are managed under both error and nonerror
+conditions.
+19. Thread Safety: Global variables are protected by locks or
+locking subroutines.
+20. Thread Safety: Objects accessed by multiple threads are accessed
+only through a lock.
+21. Thread Safety: Locks must be acquired and released in the
+right order to prevent deadlocks, even in error-handling code.
+22. Performance: Objects are duplicated only when necessary.
+23. Performance: No busy-wait loops instead of proper threadsynchronization
+methods.
+24. Performance: Memory usage is acceptable even with large
+inputs.
+25. Performance: Optimization that makes code harder to read
+should only be implemented if a profiler or other tool has indicated
+that the routine stands to gain from optimization.
+These kinds of optimizations should be well-documented and
+code that performs the same task simply should be preserved
+somewhere.
+}
+
+For example, your issue may look as follows.
+\begin{verbatim}
+## Author: 
+## Reviewer: 
+### Date of the review: 
+Inspection rate: 
+Defect rate: 
+Defect density: 
+
+### Checklist
+
+- [ ] Code Formatting
+- [x] Coding Best Practices
+- [x] Code Readability
+- [x] Code Testability
+- [ ] Code Reliability
+- [ ] Usability
+\end{verbatim}
+
+You may include additional comments for each checkmark item or include additional items. If a specific item is not relevant to the piece of code you reviewed leave it unchecked but mention its irrelevance.
+
+
+%\vspace{-0.05in}
+\section*{Deliverables and Evaluation}
+%\vspace{-0.05in}
+
+You are invited to submit the following materials:
+\begin{enumerate}
+
+	\item Updated spreadsheet with relevant information.
+	\item Issue posted in the author's project repository with the requirements outlined above.
+	\item Appropriate commit log history indicating the fix of the  issues identified during the review.
+\end{enumerate}
+
+
+\end{document}
